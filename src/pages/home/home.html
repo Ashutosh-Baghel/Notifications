@@ -1,0 +1,39 @@
+STER<ion-header>
+  <ion-navbar color="primary">
+    <ion-icon name="notifications" class="bell"></ion-icon>
+    <ion-icon name="close" class="xross"></ion-icon>
+    <ion-title color="dark" >
+    <img alt="logo" height="64" width="150" src="assets/img/header.png" align="right" >
+    <b class="name">NOTIFICATIONS</b>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      TODAY
+    </ion-list-header>
+    <hr>
+    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">   
+      <ion-avatar item-start class="avatar">
+        <img [src]="item.image" class="ava-size">
+      </ion-avatar>
+      <h1 style="color:#46464a; font-family:Arial; font-size:14pt"><strong>{{item.heading}}</strong></h1>
+      <h3 style="color:#5b5b5b;">{{item.description}}</h3><br/>
+      <p style="color:#a3a3a3;font-family:WorkSans-Regular;font-size:9.7pt">{{item.time}}</p>      
+    </button>
+    <ion-list-header>
+      YESTERDAY
+    </ion-list-header>
+     <hr>
+    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">      
+      <ion-avatar item-start class="avatar">
+        <img [src]="item.image" class="ava-size">
+      </ion-avatar>
+      <h1 style="color:#46464a; font-family:Arial; font-size:14pt"><strong>{{item.heading}}</strong></h1>
+      <h3 style="color:#5b5b5b;">{{item.description}}</h3><br/>
+      <p style="color:#a3a3a3;font-family:Arial;font-size:9.7pt">{{item.time}}</p>
+    </button>
+  </ion-list>
+</ion-content>
